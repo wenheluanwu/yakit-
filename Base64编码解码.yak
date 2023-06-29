@@ -1,0 +1,6 @@
+ret = codec.EncodeBase64("abcdefghijklmn\x99\xFf")
+println("编码为：", ret)
+res, err = codec.DecodeBase64(ret)
+die(err)
+println("解码后为：")
+dump([]byte(res))

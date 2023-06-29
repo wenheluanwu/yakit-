@@ -1,0 +1,7 @@
+ret := codec.EncodeUrl("abcdefghij<>:;{]{]|\\$^&^&#@klmn\xA0")
+println("Url编码为：", ret)
+println("-"*15)
+res, err := codec.DecodeUrl(ret)
+die(err)
+println("解码后为: ")
+dump([]byte(res))
