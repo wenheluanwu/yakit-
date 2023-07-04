@@ -1,0 +1,22 @@
+func sendPacket(target, payload) {
+    packet = f`
+GET /?enc_cmd=${payload} HTTP/1.1
+Host: ${target}
+
+`
+
+/*
+println(packet)
+
+GET /?enc_cmd=d2hvYW1p HTTP/1.1
+Host: www.baidu.com:8080
+*/
+
+    rsp, req = poc.HTTP(
+        packet,
+        poc.https(true),
+    )~
+}
+
+payload = "whoami"
+sendPacket("www.baidu.com:8080", codec.EncodeBase64(payload))

@@ -1,0 +1,17 @@
+packet = `GET / HTTP/1.1
+Host: www.baidu.com
+
+`
+rsp, req = poc.HTTP(packet, poc.https(true))~
+dump([]byte(rsp))
+println("*"*100)
+dump([]byte(req))
+
+rsp, req = poc.HTTP(
+    packet,
+    poc.https(true),
+    poc.http2(true),
+    poc.proxy("https://127.0.0.1:7890"),
+)~
+
+我们可以同时限制若干参数，这些都可以稳定同时生效。

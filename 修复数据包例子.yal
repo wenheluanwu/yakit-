@@ -1,0 +1,21 @@
+packet = `
+POST / HTTP/1.1
+Host: localhost:8000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:29.0) Gecko/20100101 Firefox/29.0
+Connection: keep-alive
+Content-Type: multipart/form-data; boundary=---------------------------9051914041544843365972754266
+Content-Length: 554
+
+-----------------------------abc
+Content-Disposition: form-data; name="text"
+
+abc
+-----------------------------abc
+Content-Disposition: form-data; name="file1"; filename="a.txt"
+Content-Type: text/plain
+
+Content of a.txt.
+-----------------------------abc--`
+
+request = poc.FixHTTPRequest(packet)
+println(string(request))

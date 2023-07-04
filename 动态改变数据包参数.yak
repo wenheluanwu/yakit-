@@ -1,0 +1,11 @@
+func sendPacket(target) {
+    packet = f`
+GET / HTTP/1.1
+Host: ${target}    
+`
+    response, request = poc.HTTP(
+        packet,
+        poc.https(true)
+    )~
+}
+sendPacket("www.manxi-inc.com:8080")

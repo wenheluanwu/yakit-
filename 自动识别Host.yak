@@ -1,0 +1,32 @@
+packet = `
+GET / HTTP/1.1
+Host: www.baidu.com
+`
+response, request = poc.HTTP(packet)~
+dump([]byte(response))
+println("*"*100)
+dump([]byte(request))
+
+packet = `GET / HTTP/1.1
+Host: www.baidu.com
+
+`
+rsp, req = poc.HTTP(
+    packet,
+    poc.https(true)
+)~
+dump([]byte(rsp))
+println("*"*100)
+dump([]byte(req))
+
+packet = `GET / HTTP/1.1
+Host: www.baidu.com:8080
+
+`
+rsp, req = poc.HTTP(
+    packet,
+    poc.https(true)
+)~
+dump([]byte(rsp))
+println("*"*100)
+dump([]byte(req))

@@ -1,0 +1,11 @@
+packet = `
+GET / HTTP/1.1
+Host: www.baidu.com:8080
+`
+response, request = poc.HTTP(
+    packet,
+    poc.https(true),
+    poc.host("127.0.0.1"),
+    poc.port(8083)
+)~
+

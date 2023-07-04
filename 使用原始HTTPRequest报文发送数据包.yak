@@ -1,0 +1,6 @@
+response, request = poc.HTTP(`GET / HTTP/1.1
+Host: www.baidu.com`
+)~
+dump([]byte(response))
+println("*"*100)
+dump([]byte(request))

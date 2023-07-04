@@ -1,0 +1,9 @@
+packet = `
+GET / HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
+
+abc123123
+`
+request = poc.FixHTTPRequest(packet)
+println(string(request))

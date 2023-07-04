@@ -1,0 +1,12 @@
+response, request, error = poc.HTTP(`
+GET / HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
+
+`)
+die(error)
+
+// 分割响应数据包的 Header 和 Body 部分
+header, body = poc.Split(response)
+println(header)                             // 打印数据包 Header
+printf("Body MD5: %v\n", codec.Md5(body))   // 计算数据包响应的 md5
