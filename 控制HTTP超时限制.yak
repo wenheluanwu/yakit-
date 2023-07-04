@@ -1,0 +1,4 @@
+request = http.Get(
+    "http://www.example.com",
+    http.timeout(0.3))~
+http.show(request)

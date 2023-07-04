@@ -1,0 +1,5 @@
+request = http.NewRequest("Get","https://www.baidu.com",http.useragent("Yaklang-User-Agent/1.1"))~
+http.show(request)
+println("*"*100)
+request = http.NewRequest("Get","https://www.baidu.com",http.fakeua())~
+http.show(request)

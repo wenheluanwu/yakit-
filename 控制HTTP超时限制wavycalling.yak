@@ -1,0 +1,5 @@
+rsp, err = http.Get("http://www.example.com", http.timeout(0.1))
+if err != nil {
+        log.error(`Get http://www.example.com: %v`, err)
+        return
+}

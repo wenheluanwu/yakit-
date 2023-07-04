@@ -1,0 +1,2 @@
+request = http.Get("http://example.com")~
+http.show(request)

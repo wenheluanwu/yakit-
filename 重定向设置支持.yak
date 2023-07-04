@@ -1,0 +1,6 @@
+request = http.Get(
+    "https://www.baidu.com",
+    http.timeout(5),
+    http.noredirect()
+    )~
+http.show(request)    

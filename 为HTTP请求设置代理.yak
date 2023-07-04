@@ -1,0 +1,6 @@
+request = http.Get(
+    "http://ifconfig.me",
+    http.timeout(5),
+    http.proxy("http://127.0.0.1:50541")
+    )~
+http.show(request)

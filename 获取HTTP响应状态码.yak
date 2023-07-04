@@ -1,0 +1,4 @@
+url = "https://www.example.com"
+request = http.Get(url)~
+statusCode = request.StatusCode
+printf(f`Request to ${url}\nResponse StatusCode: ${statusCode}`)

@@ -1,0 +1,6 @@
+request = http.NewRequest(
+    "Get","https://www.baidu.com",
+    http.header("User-Spec-Header", "AwesomeYaklang!"),
+    http.cookie("abc=123")
+    )~
+http.show(request)

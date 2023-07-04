@@ -1,0 +1,5 @@
+request = http.NewRequest("HEAD","http://baidu.com")~
+http.show(request)
+println("*"*100)
+response = http.Do(request)~
+http.show(response)
