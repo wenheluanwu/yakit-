@@ -1,0 +1,7 @@
+raw = `GET / HTTP/1.1
+Host: www.example.com
+
+abc=1`
+for index, result = range fuzz.HTTPRequest(raw, fuzz.https(true))~.FuzzMethod("HEAD", "GET", "POST", "DELETE").Results()~ {
+    println(f"${index}. method:${result.Method}")
+}

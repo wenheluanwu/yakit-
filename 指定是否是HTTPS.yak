@@ -1,0 +1,9 @@
+raw = `GET / HTTP/1.1
+Host: www.example.com
+
+abc=1`
+freq, err = fuzz.HTTPRequest(raw, fuzz.https(true))
+die(err)
+
+/* 展示数据包 */
+freq.Show()

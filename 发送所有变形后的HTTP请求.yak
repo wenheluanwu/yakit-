@@ -1,0 +1,8 @@
+raw = `GET / HTTP/1.1
+Host: www.example.com
+
+abc=1`
+resultChan = fuzz.HTTPRequest(raw, fuzz.https(true))~.FuzzMethod("HEAD", "GET", "POST", "DELETE").Exec()~
+for result in resultChan {
+    println(result)
+}

@@ -1,0 +1,7 @@
+raw = `
+GET / HTTP/1.1
+Host: www.example.com
+
+abc=1
+`
+fuzz.HTTPRequest(raw, fuzz.https(true))~.Show().ExecFirst()~

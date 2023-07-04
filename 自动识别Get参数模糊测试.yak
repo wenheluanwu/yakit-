@@ -1,0 +1,10 @@
+raw = `
+GET /target-path?abc=123 HTTP/1.1
+Host: www.example.com
+User-Agent: Ur-Awesome-UA/1.0001
+`
+freq = fuzz.HTTPRequest(raw,fuzz.https(true))~
+for parm in freq.GetGetQueryParams() {
+    token = str.RandStr(10)
+    parm.Fuzz(token).Show()
+}
